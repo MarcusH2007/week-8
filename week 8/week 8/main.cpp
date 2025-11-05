@@ -17,38 +17,44 @@ int main(int argc, char* argv[])
 	foreground.setRed(225);
 	foreground.setBlue(0);
 	foreground.setGreen(0);
+	foreground.setAlpha(0);
 
 
 	//cout can't print an unsigned int use +
 	//to make promote it to a signed char.
 	cout << +foreground.getRed() << ","
 		<< +foreground.getGreen() << ","
-		<< +foreground.getBlue() << endl;
+		<< +foreground.getBlue() << ","
+		<< +foreground.getAlpha() << endl;
 
 	Colour background; //static colour
 	background.setRed(0);
 	background.setBlue(225);
 	background.setGreen(0);
+	background.setAlpha(0);
 
 
 	cout << +background.getRed() << ","
 		<< +background.getGreen() << ","
-		<< +background.getBlue() << endl;
+		<< +background.getBlue() << ","
+		<< +background.getAlpha() << endl;
 
-	Colour* justOneMore; // dynamic colour on heap.
-	//new allocates memory and calles constructor.
-	justOneMore = new Colour(225, 225, 0);
+	Colour *justOneMore; // dynamic colour on heap.
+	//new allocates memory and calls constructor.
+	justOneMore = new Colour(225,225,0,0);
 
 	cout << +justOneMore->getRed() << ","
 		<< +justOneMore->getGreen() << ","
-		<< +justOneMore->getBlue() << endl;
+		<< +justOneMore->getBlue() << ","
+		<< +justOneMore->getAlpha() << endl;
 
 	delete justOneMore; //must release memory.
 
 	Colour maxTest;
 	cout << +maxTest.getRed() << ","
 		<< +maxTest.getGreen() << ","
-		<< +maxTest.getBlue() << endl;
+		<< +maxTest.getBlue() << ","
+		<< +maxTest.getAlpha() << endl;
 	cout << "Colour max" << +Colour::MAX << endl;
 	exit(0);
 }
